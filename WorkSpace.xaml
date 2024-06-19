@@ -1,0 +1,90 @@
+﻿<Window x:Class="testik1212.WorkSpace"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:testik1212"
+        mc:Ignorable="d"
+        Title="Администрирование: Рабочий доступ" Height="550" Width="950">
+    <Grid Background="AntiqueWhite">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="166"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="Control_Panel" Margin="5,5,5,5" Background="Gainsboro">
+            <Grid>
+                <StackPanel Background="FloralWhite" HorizontalAlignment="Left" Width="160" MaxWidth="260">
+                    <Button FontFamily="Bahnschrift Light" FontSize="20" Content="Регистрация" Margin="10,20,10,0" Height="40" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="#FFBDB8FF" Foreground="Black" BorderBrush="#FFC1C1C1" Cursor="ScrollSE" Click="OnRegistrationClicked"/>
+                    <!--<Button FontFamily="Bahnschrift Light" FontSize="18" Content="Поиск пациента" Margin="10,20,10,0" Height="40" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="#FFE8FFE0" BorderBrush="#FFC1C1C1" Click="OnSearch_PatientClicked"/>-->
+                    <Button FontFamily="Bahnschrift Light" FontSize="18" Content="Госпитализация" Margin="10,20,10,0" Height="40" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="#FFFFEBF8" BorderBrush="#FFC1C1C1" Cursor="ScrollSE" Click="IsGospitalizeClicked"/>
+                    <Button FontFamily="Bahnschrift Light" FontSize="21" Content="Работа с QR" Margin="10,20,10,0" Height="40" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="#FFFDB0E2" BorderBrush="#FFC1C1C1" Cursor="ScrollSE" Click="ScanQR"/>
+
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid x:Name="Work_Space" Grid.Column="1" Background="Azure" Margin="0,10,10,10">
+            <ScrollViewer x:Name="RegPatient" CanContentScroll="True" Margin="0,10,0,82" d:IsHidden="True">
+                <Grid>
+                    <TextBlock Text="Имя:" Width="194" Height="30" HorizontalAlignment="Left" Margin="50,20,0,0" FontFamily="Bahnschrift Light" FontSize="25" VerticalAlignment="Top"/>
+                    <TextBox x:Name="name" Width="400" Height="30" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,20,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+
+                    <TextBlock Text="Фамилия:" Width="194" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,60,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+                    <TextBox x:Name="subname" Width="400" Height="30" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,60,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+
+                    <TextBlock Text="Отчество:" Width="194" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,100,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+                    <TextBox x:Name="thirdname" Width="400" Height="30" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,100,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+
+                    <TextBlock Text="Пол:" Width="194" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,140,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+                    <ComboBox x:Name="gender" Width="400" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,140,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+
+                    <TextBlock Text="Адрес:" Width="194" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,180,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+                    <TextBox x:Name="address" Width="400" Height="30" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,180,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+
+                    <TextBlock Text="Номер телефона:" Width="194" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,220,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+                    <TextBox x:Name="phone" Width="400" Height="30" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,220,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+
+                    <TextBlock Text="e-mail:" Width="194" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,260,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+                    <TextBox x:Name="email" Width="400" Height="30" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,260,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+
+                    <TextBlock Text="№ мед. карты:" Width="194" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,300,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+                    <TextBox x:Name="med_card" Width="400" Height="30" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="290,300,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+
+                    <TextBlock Text="Дата создания мед. карты:" Width="325" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,340,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+                    <TextBox x:Name="create_data_med_card" Width="312" Height="30" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="378,340,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+
+                    <TextBlock Text="Дата посл. обращения:" Width="325" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,380,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+                    <TextBox x:Name="last_request_data" Width="361" Height="30" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="329,380,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+
+                    <TextBlock Text="Дата след. обращения:" Width="325" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,420,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+                    <TextBox x:Name="next_request_data" Width="361" Height="30" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="329,420,0,0" FontFamily="Bahnschrift Light" FontSize="25"/>
+
+                    <Button x:Name="Registration_Patient" Click="Register_Patient" Content="Зарегистрировать пациента" Width="400" Height="55" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="290,0,0,20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bahnschrift Light" FontSize="25" Background="#FFE2F3DA">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                    </Button>
+                </Grid>
+            </ScrollViewer>
+            <Grid x:Name="Gospitalization">
+                <Button FontFamily="Bahnschrift Light" FontSize="18" Content="Поиск пациента" Margin="550,25,0,0" Height="40" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFE8FFE0" BorderBrush="#FFC1C1C1" Click="OnSearch_PatientClicked"/>
+                <TextBox x:Name="searcher_patient" Width="374" Height="30" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,30,0,0" FontFamily="Bahnschrift Light" FontSize="25" TextChanged="searcher_patient_TextChanged"/>
+
+                <DataGrid Name="result_searcher" AutoGenerateColumns="True" Margin="5,90,5,5" FontFamily="Futura Bk BT" FontSize="16">
+                    <DataGrid.Columns>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Grid x:Name="QR_zone" d:IsHidden="True">
+                <Grid Background="Azure">
+                    <Label x:Name="QR_result" Width="200" Height="30" Margin="287,23,287,461" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Image x:Name="QR_image" Width="200" Height="200" Margin="287,72,287,242"/>
+                    <TextBox x:Name="QR_encode" Width="200" Height="30" Margin="287,290,287,194" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Button x:Name="QR_start_encode" Content="Закодировать" Width="200" Height="30" Margin="287,338,287,146" Click="Encode"/>
+                    <Button x:Name="QR_start_save" Content="Сохранить" Width="200" Height="30" Margin="287,385,287,99" Click="Save"/>
+                    <Button x:Name="QR_start_decode" Content="Распознать" Width="200" Height="30" Margin="287,433,287,51" Click="Decode"/>
+
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

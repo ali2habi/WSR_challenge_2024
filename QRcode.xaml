@@ -1,0 +1,16 @@
+﻿<Window x:Class="testik1212.QRcode"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:testik1212"
+        mc:Ignorable="d"
+        Title="QRcode" Height="700" Width="600">
+    <Grid Background="Azure">
+        <Label x:Name="QR_result" Width="200" Height="30" Margin="125,-272,125,135" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Image x:Name="QR_image" Width="200" Height="200" Margin="125,52,125,184"/>
+        <TextBox x:Name="QR_encode" Width="200" Height="30" Margin="125,271,125,135" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="QR_start_encode" Content="Закодировать" Width="200" Height="30" Margin="125,317,125,89" Click="Encode"/>
+        <Button x:Name="QR_start_save" Content="Сохранить" Width="200" Height="30" Margin="150,387,150,67" Click="Save"/>
+    </Grid>
+</Window>
